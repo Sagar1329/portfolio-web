@@ -1,47 +1,80 @@
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { contact } from "../data";
+import {
+    Mail,
+    Phone,
+    Github,
+    Linkedin,
+} from "lucide-react";
 
-const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.1 },
-    },
-};
-
-const contactItemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { type: 'spring', stiffness: 120 },
-    },
-};
-
-export default function Contact({ profile }) {
+const Contact = () => {
     return (
-        <motion.section
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-        >
-            <h2 className="text-4xl font-heading text-accent mb-6 border-b-2 border-accent pb-2">Contact</h2>
-            <motion.div className="space-y-6 text-text-secondary bg-gray-800 p-8 rounded-xl shadow-xl">
-                <motion.p variants={contactItemVariants} className="text-xl font-body flex items-center space-x-3">
-                    <FaEnvelope className="text-accent" /> <span>Email:</span> <a href={`mailto:${profile.contact.email}`} className="text-accent hover:text-blue-400 transition-colors duration-300">{profile.contact.email}</a>
-                </motion.p>
-                <motion.p variants={contactItemVariants} className="text-xl font-body flex items-center space-x-3">
-                    <FaPhone className="text-accent" /> <span>Phone:</span> <span className="text-text-primary">{profile.contact.phone}</span>
-                </motion.p>
-                <motion.p variants={contactItemVariants} className="text-xl font-body flex items-center space-x-3">
-                    <FaGithub className="text-accent" /> <span>GitHub:</span> <a href={profile.contact.github} className="text-accent hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">{profile.contact.github}</a>
-                </motion.p>
-                <motion.p variants={contactItemVariants} className="text-xl font-body flex items-center space-x-3">
-                    <FaLinkedin className="text-accent" /> <span>LinkedIn:</span> <a href={profile.contact.linkedin} className="text-accent hover:text-blue-400 transition-colors duration-300" target="_blank" rel="noopener noreferrer">{profile.contact.linkedin}</a>
-                </motion.p>
-            </motion.div>
-        </motion.section>
+        <section id="contact" className="py-16">
+            <div className="text-center">
+                {/* Section Title */}
+                <div className="flex items-center justify-center gap-3 mb-4">
+                    <Mail className="w-7 h-7 text-sky-400" />
+                    <h2 className="text-4xl font-bold text-white">
+                        Get In Touch
+                    </h2>
+                </div>
+
+                <p className="text-slate-300 mb-8 max-w-xl mx-auto">
+                    Open to full-time roles, contract opportunities, and product-focused
+                    engineering work. Feel free to reach out.
+                </p>
+
+                {/* Contact Info */}
+                <div className="space-y-4 text-slate-300 max-w-md mx-auto">
+                    <div className="flex items-center justify-center gap-3">
+                        <Mail className="w-5 h-5 text-sky-400" />
+                        <a
+                            href={`mailto:${contact.email}`}
+                            className="text-sky-400 hover:text-sky-300 transition"
+                        >
+                            {contact.email}
+                        </a>
+                    </div>
+
+                    <div className="flex items-center justify-center gap-3">
+                        <Phone className="w-5 h-5 text-sky-400" />
+                        <a
+                            href={`tel:${contact.phone}`}
+                            className="text-sky-400 hover:text-sky-300 transition"
+                        >
+                            {contact.phone}
+                        </a>
+                    </div>
+                </div>
+
+                {/* Social Links */}
+                <div className="flex justify-center gap-4 mt-10">
+                    <a
+                        href={contact.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 px-5 py-2
+                       border border-slate-500 rounded-lg
+                       text-slate-200 hover:bg-slate-700 transition"
+                    >
+                        <Github className="w-4 h-4" />
+                        GitHub
+                    </a>
+
+                    <a
+                        href={contact.linkedin}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 px-5 py-2
+                       border border-slate-500 rounded-lg
+                       text-slate-200 hover:bg-slate-700 transition"
+                    >
+                        <Linkedin className="w-4 h-4" />
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
     );
-}
+};
+
+export default Contact;

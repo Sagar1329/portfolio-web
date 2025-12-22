@@ -1,54 +1,68 @@
-import { motion } from 'framer-motion';
-import * as FaIcons from 'react-icons/fa';
-import * as SiIcons from 'react-icons/si';
+import { skills } from "../data";
+import { skillIcons } from "../constants/skillIcons";
+import {
+    Code2,
+    Server,
+    Smartphone,
+    Database,
+    Settings,
+} from "lucide-react";
 
-const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: 'easeOut', staggerChildren: 0.1 },
-    },
-};
+const SectionTitle = ({ icon: Icon, title }) => (
+    <div className="flex items-center gap-3 mb-10">
+        <Icon className="w-7 h-7 text-sky-400" />
+        <h2 className="text-4xl font-bold text-white">{title}</h2>
+    </div>
+);
 
-const skillVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-        opacity: 1,
-        x: 0,
-        transition: { type: 'spring', stiffness: 120 },
-    },
-};
+const SkillCard = ({ title, icon: Icon, items }) => (
+    <div className="border border-slate-600 rounded-xl p-5 bg-[#1f2937]">
+        <div className="flex items-center gap-2 mb-4">
+            <Icon className="w-5 h-5 text-sky-400" />
+            <h3 className="text-lg font-semibold text-white">{title}</h3>
+        </div>
 
-const IconMap = {
-    ...FaIcons,
-    ...SiIcons,
-};
+        <div className="flex flex-wrap gap-3">
+            {items.map((skill, index) => {
+                const SkillIcon = skillIcons[skill];
 
-export default function Skills({ skills }) {
+                return (
+                    <span
+                        key={index}
+                        className="flex items-center gap-2 px-3 py-1.5
+                       border border-slate-500 rounded-full text-sm
+                       text-slate-200 hover:border-sky-400
+                       hover:text-sky-400 transition"
+                    >
+                        {SkillIcon && <SkillIcon className="w-4 h-4" />}
+                        {skill}
+                    </span>
+                );
+            })}
+        </div>
+    </div>
+);
+
+const Skills = () => {
     return (
-        <motion.section
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-        >
-            <h2 className="text-4xl font-heading text-accent mb-6 border-b-2 border-accent pb-2">Skills</h2>
-            <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                {skills.map((skill, idx) => {
-                    const IconComponent = IconMap[skill.icon];
-                    return (
-                        <motion.div
-                            key={idx}
-                            variants={skillVariants}
-                            className="bg-gray-800 p-6 rounded-lg shadow-xl hover:shadow-accent/50 transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center justify-center text-center"
-                        >
-                            {IconComponent && <IconComponent className="text-4xl text-accent mb-3" />}
-                            <p className="text-text-primary font-body text-lg">{skill.name}</p>
-                        </motion.div>
-                    );
-                })}
-            </motion.div>
-        </motion.section>
+        <section id="skills" className="py-16">
+            <SectionTitle icon={Code2} title="Skills" />
+
+            <div className="grid md:grid-cols-2 gap-6">
+                <SkillCard title="Frontend" icon={Code2} items={skills.frontend} />
+                <SkillCard title="Backend" icon={Server} items={skills.backend} />
+                <SkillCard title="Mobile" icon={Smartphone} items={skills.mobile} />
+                <SkillCard title="Databases" icon={Database} items={skills.databases} />
+                <div className="md:col-span-2">
+                    <SkillCard
+                        title="DevOps & Tools"
+                        icon={Settings}
+                        items={skills.devops_tools}
+                    />
+                </div>
+            </div>
+        </section>
     );
-}
+};
+
+export default Skills;

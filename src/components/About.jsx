@@ -1,25 +1,25 @@
-import { motion } from 'framer-motion';
+import { about } from "../data";
+import { User } from "lucide-react";
 
-const sectionVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.8, ease: 'easeOut' },
-    },
+const About = () => {
+    return (
+        <section id="about" className="py-16">
+            <div>
+                <div className="flex items-center gap-3 mb-6">
+                    <User className="w-7 h-7 text-sky-400" />
+                    <h2 className="text-4xl font-bold text-white">About Me</h2>
+                </div>
+
+                <h3 className="text-xl font-semibold text-slate-300 mb-4">
+                    {about.role}
+                </h3>
+
+                <p className="text-lg leading-relaxed text-slate-300 max-w-3xl">
+                    {about.description}
+                </p>
+            </div>
+        </section>
+    );
 };
 
-export default function About({ careerObjective }) {
-    return (
-        <motion.section
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            className="bg-gray-800 p-8 rounded-lg shadow-xl"
-        >
-            <h2 className="text-4xl font-heading text-accent mb-6 border-b-2 border-accent pb-2">Career Objective</h2>
-            <p className="text-text-primary text-xl font-body leading-relaxed">{careerObjective}</p>
-        </motion.section>
-    );
-}
+export default About;

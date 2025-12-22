@@ -1,54 +1,37 @@
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { about } from "../data";
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-            delayChildren: 0.5,
-        },
-    },
-};
-
-const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-        y: 0,
-        opacity: 1,
-        transition: { type: 'spring', stiffness: 100 },
-    },
-};
-
-export default function Header({ profile }) {
+const Header = () => {
     return (
-        <motion.header
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            className="bg-gradient-to-r from-primary to-gray-800 py-8 text-center shadow-lg"
-        >
-            <motion.h1 variants={itemVariants} className="text-6xl font-heading text-white tracking-wider">
-                {profile.name}
-            </motion.h1>
-            <motion.p variants={itemVariants} className="text-xl font-body text-gray-300 mt-3">
-                {profile.title}
-            </motion.p>
-            <motion.div variants={itemVariants} className="flex justify-center gap-6 mt-6 flex-wrap">
-                <a href={`mailto:${profile.contact.email}`} className="text-accent hover:text-blue-400 transition-colors duration-300 text-lg font-body border border-accent px-4 py-2 rounded-full hover:bg-accent hover:text-white flex items-center space-x-2">
-                    <FaEnvelope /> <span>Email</span>
+        <header className="sticky top-0 z-50 bg-[#0f172a] border-b border-slate-700">
+            <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+                {/* Brand */}
+                <a
+                    href="#about"
+                    className="text-lg font-bold text-white hover:text-sky-400 transition"
+                >
+                    {about.name}
                 </a>
-                <a href={profile.contact.github} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 text-lg font-body border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 hover:text-primary flex items-center space-x-2">
-                    <FaGithub /> <span>GitHub</span>
+
+                {/* Navigation */}
+                <nav className="hidden md:flex gap-6 text-sm text-slate-300">
+                    <a href="#about" className="hover:text-white">About</a>
+                    <a href="#skills" className="hover:text-white">Skills</a>
+                    <a href="#projects" className="hover:text-white">Projects</a>
+                    <a href="#experience" className="hover:text-white">Experience</a>
+                    <a href="#education" className="hover:text-white">Education</a>
+                    <a href="#contact" className="hover:text-white">Contact</a>
+                </nav>
+
+                {/* CTA */}
+                <a
+                    href="#contact"
+                    className="text-sm px-4 py-2 border border-slate-500 rounded-lg text-slate-200 hover:bg-slate-700 transition"
+                >
+                    Hire Me
                 </a>
-                <a href={profile.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 text-lg font-body border border-gray-300 px-4 py-2 rounded-full hover:bg-gray-300 hover:text-primary flex items-center space-x-2">
-                    <FaLinkedin /> <span>LinkedIn</span>
-                </a>
-            </motion.div>
-            <motion.p variants={itemVariants} className="text-base font-body text-gray-400 mt-5">
-                <span className="inline-block mr-2">📱</span> {profile.contact.phone}
-            </motion.p>
-        </motion.header>
+            </div>
+        </header>
     );
-}
+};
+
+export default Header;
