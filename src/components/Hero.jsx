@@ -35,7 +35,7 @@ const Hero = () => {
                         </a>
 
                         <a
-                            href="/SagarResume.pdf"
+                            href={`${import.meta.env.BASE_URL}Sagar_K_Resume.pdf`}
                             target="_blank"
                             rel="noreferrer"
                         
