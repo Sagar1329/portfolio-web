@@ -1,5 +1,5 @@
 import { about, contact } from "../data";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail,Download } from "lucide-react";
 
 const Hero = () => {
     return (
@@ -29,19 +29,22 @@ const Hero = () => {
                         <a
                             href="#contact"
                             className="px-6 py-3 bg-sky-500 text-white rounded-lg
-                         hover:bg-sky-400 transition"
+               hover:bg-sky-400 transition"
                         >
                             Contact Me
                         </a>
 
                         <a
-                            href={contact.github}
+                            href="/SagarResume.pdf"
                             target="_blank"
                             rel="noreferrer"
-                            className="px-6 py-3 border border-slate-500 text-slate-200 rounded-lg
-                         hover:bg-slate-700 transition"
+                        
+                            className="flex items-center gap-2 px-6 py-3
+               border border-slate-500 text-slate-200 rounded-lg
+               hover:bg-slate-700 transition"
                         >
-                            View GitHub
+                            <Download className="w-4 h-4" />
+                            Download Resume
                         </a>
                     </div>
 
