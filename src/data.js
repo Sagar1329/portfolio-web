@@ -21,6 +21,7 @@ export const skills = {
         "Expo",
         "Tailwind CSS",
         "Bootstrap",
+        "Material UI",
     ],
     backend: [
         "Ruby on Rails",
@@ -57,25 +58,33 @@ export const projects = [
         tech: "React Native, Ruby on Rails, MySQL, Payment Gateway",
         description:
             "Built and shipped a public e-commerce mobile application with 3,000+ downloads. Implemented complete user purchase flow including product listing, cart, order placement, payment processing, delivery tracking, and notifications.",
+        liveUrl: null, // mobile app – no public web URL
+        githubUrl: null, // priv
     },
     {
         title: "Admin Dashboard – Quick Commerce",
         tech: "React.js, Ruby on Rails APIs",
         description:
             "Developed a full-featured admin dashboard to manage orders, inventory, delivery workflows, and operational users. Used daily by internal teams for real-time business operations.",
+        liveUrl: null, // mobile app – no public web URL
+        githubUrl: null, // priv
     },
     {
-        title: "CliniVault – Medical Records App",
-        tech: "Flutter, Firebase",
-        description:
-            "Built a cross-platform medical records digitization app with secure authentication, structured UI flows, and cloud-based document storage.",
+        title: "Crypto Screener / CryptoPulse",
+        tech: "Next.js, TypeScript, Tailwind CSS, shadcn/ui, CoinGecko API, TradingView",
+        description: `Built and deployed a production-grade cryptocurrency analytics dashboard using Next.js and TypeScript.
+Integrated the CoinGecko API (demo version) to fetch real-time and historical cryptocurrency market data including prices, market capitalization, and volume.
+Implemented interactive candlestick and price charts using the TradingView charting library for enhanced technical analysis.
+Designed a fully responsive and accessible UI using Tailwind CSS and shadcn/ui components.
+Developed advanced features such as token search, pagination, filtering, and detailed asset views to improve data discoverability and user experience.
+Followed modern frontend best practices including component reusability, type safety, and API abstraction.
+Used Git for version control and collaborative development workflows.
+Deployed the application on Vercel with production-ready configuration.`,
+        liveUrl: "https://crypto-screener-zeta.vercel.app/",
+        githubUrl: "https://github.com/Sagar1329/Crypto-screener.git",
     },
-    {
-        title: "Restaurant Review Sentiment Analyzer",
-        tech: "Python, Streamlit, NLP, SVM",
-        description:
-            "Designed and built a Streamlit-based UI for an NLP-powered restaurant review sentiment classification system using an SVM-based machine learning model.",
-    },
+
+  
 ];
 
 // =======================
