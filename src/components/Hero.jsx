@@ -9,7 +9,7 @@ const Hero = () => {
                 {/* Left Content */}
                 <div className="flex-1 text-center md:text-left">
                     <p className="text-sky-400 font-medium mb-3">
-                        Hi, I’m
+                        Hello, I’m
                     </p>
 
                     <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
