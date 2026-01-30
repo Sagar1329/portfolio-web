@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { projects } from "../data";
-import { FolderGit2, ExternalLink, Github } from "lucide-react";
+import { FolderGit2, ExternalLink, Github, Play } from "lucide-react";
 
 const DESCRIPTION_LIMIT = 220;
 
@@ -70,6 +70,17 @@ const ProjectCard = ({ project }) => {
                         title="Live Demo"
                     >
                         <ExternalLink size={20} />
+                    </a>
+                )}
+                {project.playstoreUrl && (
+                    <a
+                        href={project.playstoreUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 hover:text-sky-400 transition"
+                        title="Play Store"
+                    >
+                        <Play size={20} />
                     </a>
                 )}
 

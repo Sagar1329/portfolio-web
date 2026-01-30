@@ -60,6 +60,7 @@ export const projects = [
             "Built and shipped a public e-commerce mobile application with 3,000+ downloads. Implemented complete user purchase flow including product listing, cart, order placement, payment processing, delivery tracking, and notifications.",
         liveUrl: null, // mobile app – no public web URL
         githubUrl: null, // priv
+        playstoreUrl: "https://play.google.com/store/apps/details?id=in.zetahub&pcampaignid=web_share",
     },
     {
         title: "Admin Dashboard – Quick Commerce",
@@ -67,7 +68,8 @@ export const projects = [
         description:
             "Developed a full-featured admin dashboard to manage orders, inventory, delivery workflows, and operational users. Used daily by internal teams for real-time business operations.",
         liveUrl: null, // mobile app – no public web URL
-        githubUrl: null, // priv
+        githubUrl: null,
+        playstoreUrl: null // priv
     },
     {
         title: "Crypto Screener / CryptoPulse",
@@ -82,6 +84,7 @@ Used Git for version control and collaborative development workflows.
 Deployed the application on Vercel with production-ready configuration.`,
         liveUrl: "https://crypto-screener-zeta.vercel.app/",
         githubUrl: "https://github.com/Sagar1329/Crypto-screener.git",
+        playstoreUrl: null,
     },
 
   
