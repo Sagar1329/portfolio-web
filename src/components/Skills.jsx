@@ -24,17 +24,17 @@ const SkillChip = ({ label }) => {
 const Skills = () => {
     return (
         <section id="skills" className="section-shell">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-2.5 mb-4">
                 <Code2 className="w-6 h-6 text-cyan-300" />
                 <h2 className="section-title">Skills</h2>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 xl:grid-cols-1 gap-3">
                 {groups.map(({ key, title, icon: Icon }) => (
-                    <div key={key} className="rounded-2xl border border-slate-700 bg-slate-900/55 p-5">
-                        <div className="flex items-center gap-2 mb-4">
+                    <div key={key} className="rounded-xl border border-slate-700 bg-slate-900/55 p-4">
+                        <div className="flex items-center gap-2 mb-3">
                             <Icon size={18} className="text-cyan-300" />
-                            <h3 className="font-heading text-lg text-slate-100">{title}</h3>
+                            <h3 className="font-heading text-base text-slate-100">{title}</h3>
                         </div>
 
                         <div className="flex flex-wrap gap-2.5">

@@ -19,13 +19,27 @@ export default function App() {
         >
             <Header />
 
-            <main className="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-16 space-y-8 md:space-y-10">
-                <Hero />
-                <Skills />
-                <Experience />
-                <Freelance />
-                <Projects />
-                <Contact />
+            <main className="max-w-[1500px] mx-auto px-3 md:px-5 py-6 md:py-8 grid grid-cols-1 xl:grid-cols-12 gap-4 md:gap-5">
+                <div className="xl:col-span-12">
+                    <Hero />
+                </div>
+
+                <div className="xl:col-span-4 space-y-4 md:space-y-5 self-start">
+                    <Skills />
+                </div>
+
+                <div className="xl:col-span-8 space-y-4 md:space-y-5 self-start">
+                    <Experience />
+                    <Freelance />
+                </div>
+
+                <div className="xl:col-span-12">
+                    <Projects />
+                </div>
+
+                <div className="xl:col-span-12">
+                    <Contact />
+                </div>
             </main>
 
             <Footer />

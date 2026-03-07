@@ -16,7 +16,7 @@ const Header = () => {
 
     return (
         <header className="sticky top-0 z-50 backdrop-blur-lg border-b border-slate-700/80 bg-slate-950/75">
-            <div className="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+            <div className="max-w-[1500px] mx-auto px-3 md:px-5 h-14 md:h-16 flex items-center justify-between">
                 <a href="#about" className="text-lg font-heading font-bold tracking-wide text-slate-100">
                     {about.name}
                 </a>

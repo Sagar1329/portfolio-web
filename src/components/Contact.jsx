@@ -4,7 +4,7 @@ import { contact } from "../data";
 const Contact = () => {
     return (
         <section id="contact" className="section-shell">
-            <div className="flex items-center gap-3 mb-3">
+            <div className="flex items-center gap-2.5 mb-2">
                 <Mail className="w-6 h-6 text-cyan-300" />
                 <h2 className="section-title">Get In Touch</h2>
             </div>
@@ -14,31 +14,29 @@ const Contact = () => {
                 Reach out and I will respond quickly.
             </p>
 
-            <div className="mt-6 grid sm:grid-cols-2 gap-3">
-                <a href={`mailto:${contact.email}`} className="rounded-xl border border-slate-700 bg-slate-900/55 p-4 hover:border-cyan-300/50 transition">
+            <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                <a href={`mailto:${contact.email}`} className="rounded-xl border border-slate-700 bg-slate-900/55 p-3.5 hover:border-cyan-300/50 transition">
                     <p className="text-xs text-slate-400">Email</p>
                     <p className="text-slate-200 mt-1 inline-flex items-center gap-2"><Mail size={15} className="text-cyan-300" />{contact.email}</p>
                 </a>
 
-                <a href={`tel:${contact.phone}`} className="rounded-xl border border-slate-700 bg-slate-900/55 p-4 hover:border-cyan-300/50 transition">
+                <a href={`tel:${contact.phone}`} className="rounded-xl border border-slate-700 bg-slate-900/55 p-3.5 hover:border-cyan-300/50 transition">
                     <p className="text-xs text-slate-400">Phone</p>
                     <p className="text-slate-200 mt-1 inline-flex items-center gap-2"><Phone size={15} className="text-cyan-300" />{contact.phone}</p>
                 </a>
 
-                <a href={contact.github} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-700 bg-slate-900/55 p-4 hover:border-cyan-300/50 transition">
+                <a href={contact.github} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-700 bg-slate-900/55 p-3.5 hover:border-cyan-300/50 transition">
                     <p className="text-xs text-slate-400">GitHub</p>
                     <p className="text-slate-200 mt-1 inline-flex items-center gap-2"><Github size={15} className="text-cyan-300" />Sagar1329</p>
                 </a>
 
-                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-700 bg-slate-900/55 p-4 hover:border-cyan-300/50 transition">
+                <a href={contact.linkedin} target="_blank" rel="noreferrer" className="rounded-xl border border-slate-700 bg-slate-900/55 p-3.5 hover:border-cyan-300/50 transition">
                     <p className="text-xs text-slate-400">LinkedIn</p>
                     <p className="text-slate-200 mt-1 inline-flex items-center gap-2"><Linkedin size={15} className="text-cyan-300" />sagargowda1329</p>
                 </a>
             </div>
 
-            <a href={contact.portfolio} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-cyan-200 hover:text-cyan-100 text-sm transition">
-                <Globe size={15} /> Public portfolio link
-            </a>
+            
         </section>
     );
 };

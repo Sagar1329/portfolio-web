@@ -5,12 +5,12 @@ import { projects } from "../data";
 const Projects = () => {
     return (
         <section id="projects" className="section-shell">
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-2.5 mb-4">
                 <FolderKanban className="w-6 h-6 text-cyan-300" />
                 <h2 className="section-title">Projects</h2>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-3">
                 {projects.map((project, index) => (
                     <motion.article
                         key={project.title}
@@ -18,11 +18,11 @@ const Projects = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.35, delay: index * 0.08 }}
-                        className="rounded-2xl border border-slate-700 bg-slate-900/55 p-5 flex flex-col"
+                        className="rounded-xl border border-slate-700 bg-slate-900/55 p-4 flex flex-col"
                     >
                         <div className="flex items-start justify-between gap-3">
                             <div>
-                                <h3 className="text-slate-100 text-lg font-heading">{project.title}</h3>
+                                <h3 className="text-slate-100 text-base md:text-lg font-heading">{project.title}</h3>
                                 <p className="text-xs text-slate-400 mt-1">{project.period}</p>
                             </div>
                             <span className="text-xs rounded-full border border-cyan-300/35 bg-cyan-300/10 px-2.5 py-1 text-cyan-200">
@@ -30,7 +30,7 @@ const Projects = () => {
                             </span>
                         </div>
 
-                        <p className="mt-3 text-sm text-slate-300 leading-relaxed">{project.description}</p>
+                        <p className="mt-2.5 text-sm text-slate-300 leading-relaxed">{project.description}</p>
 
                         <div className="mt-4 flex flex-wrap gap-2">
                             {project.tech.map((item) => (
