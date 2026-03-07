@@ -6,7 +6,7 @@ const Experience = () => {
     return (
         <section id="experience" className="section-shell">
             <div className="flex items-center gap-3 mb-6">
-                <BriefcaseBusiness className="w-6 h-6 text-sky-600" />
+                <BriefcaseBusiness className="w-6 h-6 text-cyan-300" />
                 <h2 className="section-title">Professional Experience</h2>
             </div>
 
@@ -18,19 +18,19 @@ const Experience = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.35, delay: index * 0.08 }}
-                        className="rounded-2xl border border-slate-200 bg-white p-5"
+                        className="rounded-2xl border border-slate-700 bg-slate-900/55 p-5"
                     >
                         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
                             <div>
-                                <h3 className="text-slate-900 font-heading text-lg">{item.role}</h3>
-                                <p className="text-sky-700 font-semibold text-sm">{item.company}</p>
+                                <h3 className="text-slate-100 font-heading text-lg">{item.role}</h3>
+                                <p className="text-cyan-200 font-semibold text-sm">{item.company}</p>
                             </div>
-                            <p className="text-xs md:text-sm text-slate-500 rounded-full border border-slate-200 px-3 py-1 w-fit">
+                            <p className="text-xs md:text-sm text-slate-300 rounded-full border border-slate-600 bg-slate-900/70 px-3 py-1 w-fit">
                                 {item.duration}
                             </p>
                         </div>
 
-                        <ul className="mt-4 space-y-2 text-slate-600 text-sm leading-relaxed list-disc list-inside">
+                        <ul className="mt-4 space-y-2 text-slate-300 text-sm leading-relaxed list-disc list-inside">
                             {item.details.map((point) => (
                                 <li key={point}>{point}</li>
                             ))}

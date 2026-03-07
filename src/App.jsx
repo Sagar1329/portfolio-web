@@ -15,7 +15,7 @@ export default function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="min-h-screen text-slate-900 soft-grid"
+            className="min-h-screen text-slate-100 soft-grid"
         >
             <Header />
 

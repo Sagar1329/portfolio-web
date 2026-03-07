@@ -6,7 +6,7 @@ const About = () => {
         <section id="about" className="py-16">
             <div>
                 <div className="flex items-center gap-3 mb-6">
-                    <User className="w-7 h-7 text-sky-400" />
+                    <User className="w-7 h-7 text-cyan-300" />
                     <h2 className="text-4xl font-bold text-white">About Me</h2>
                 </div>
 
