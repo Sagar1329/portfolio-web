@@ -1,35 +1,65 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import { about } from "../data";
 
+const navLinks = [
+    { label: "Home", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Experience", href: "#experience" },
+    { label: "Freelance", href: "#freelance" },
+    { label: "Projects", href: "#projects" },
+    { label: "Contact", href: "#contact" },
+];
+
 const Header = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <header className="sticky top-0 z-50 bg-[#0f172a] border-b border-slate-700">
-            <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                {/* Brand */}
-                <a
-                    href="#about"
-                    className="text-lg font-bold text-white hover:text-sky-400 transition"
-                >
+        <header className="sticky top-0 z-50 backdrop-blur-lg border-b border-slate-200/80 bg-white/85">
+            <div className="max-w-6xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between">
+                <a href="#about" className="text-lg font-heading font-bold tracking-wide text-slate-900">
                     {about.name}
                 </a>
 
-                {/* Navigation */}
-                <nav className="hidden md:flex gap-6 text-sm text-slate-300">
-                    <a href="#about" className="hover:text-white">About</a>
-                    <a href="#skills" className="hover:text-white">Skills</a>
-                    <a href="#projects" className="hover:text-white">Projects</a>
-                    <a href="#experience" className="hover:text-white">Experience</a>
-                    <a href="#education" className="hover:text-white">Education</a>
-                    <a href="#contact" className="hover:text-white">Contact</a>
+                <nav className="hidden md:flex items-center gap-6 text-sm text-slate-600">
+                    {navLinks.map((item) => (
+                        <a key={item.href} href={item.href} className="hover:text-sky-600 transition-colors">
+                            {item.label}
+                        </a>
+                    ))}
                 </nav>
 
-                {/* CTA */}
                 <a
                     href="#contact"
-                    className="text-sm px-4 py-2 border border-slate-500 rounded-lg text-slate-200 hover:bg-slate-700 transition"
+                    className="hidden md:inline-flex px-4 py-2 rounded-full border border-sky-200 text-sky-700 hover:bg-sky-50 transition"
                 >
-                    Hire Me
+                    Let us talk
                 </a>
+
+                <button
+                    type="button"
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    className="md:hidden p-2 rounded-md border border-slate-300 text-slate-700"
+                    aria-label="Toggle menu"
+                >
+                    {isOpen ? <X size={18} /> : <Menu size={18} />}
+                </button>
             </div>
+
+            {isOpen && (
+                <nav className="md:hidden px-4 pb-4 flex flex-col gap-3 text-sm border-t border-slate-200 bg-white">
+                    {navLinks.map((item) => (
+                        <a
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setIsOpen(false)}
+                            className="py-2 text-slate-700 hover:text-sky-600 transition-colors"
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </nav>
+            )}
         </header>
     );
 };

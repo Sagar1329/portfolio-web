@@ -1,67 +1,42 @@
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { BriefcaseBusiness } from "lucide-react";
 import { experience } from "../data";
-import { Briefcase } from "lucide-react";
 
 const Experience = () => {
-    const [openIndex, setOpenIndex] = useState(null);
-
-    const toggle = (index) => {
-        setOpenIndex(openIndex === index ? null : index);
-    };
-
     return (
-        <section id="experience" className="py-16">
-            <div>
-                <div className="flex items-center gap-3 mb-10">
-                    <Briefcase className="w-7 h-7 text-sky-400" />
-                    <h2 className="text-4xl font-bold text-white">
-                        Professional Experience
-                    </h2>
-                </div>
+        <section id="experience" className="section-shell">
+            <div className="flex items-center gap-3 mb-6">
+                <BriefcaseBusiness className="w-6 h-6 text-sky-600" />
+                <h2 className="section-title">Professional Experience</h2>
+            </div>
 
-
-                <div className="space-y-6">
-                    {experience.map((item, index) => {
-                        const isOpen = openIndex === index;
-
-                        return (
-                            <div
-                                key={index}
-                                className="border border-slate-600 rounded-xl bg-[#1f2937]"
-                            >
-                                {/* Header */}
-                                <button
-                                    onClick={() => toggle(index)}
-                                    className="w-full flex justify-between items-center p-6 text-left"
-                                >
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-white">
-                                            {item.company}
-                                        </h3>
-                                        <p className="text-sm text-slate-400">
-                                            {item.role} · {item.duration}
-                                        </p>
-                                    </div>
-
-                                    <span className="text-slate-300 text-xl">
-                                        {isOpen ? "−" : "+"}
-                                    </span>
-                                </button>
-
-                                {/* Content */}
-                                {isOpen && (
-                                    <div className="px-6 pb-6">
-                                        <ul className="list-disc list-inside space-y-2 text-slate-300">
-                                            {item.details.map((point, i) => (
-                                                <li key={i}>{point}</li>
-                                            ))}
-                                        </ul>
-                                    </div>
-                                )}
+            <div className="space-y-4">
+                {experience.map((item, index) => (
+                    <motion.article
+                        key={`${item.company}-${item.duration}`}
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.35, delay: index * 0.08 }}
+                        className="rounded-2xl border border-slate-200 bg-white p-5"
+                    >
+                        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1">
+                            <div>
+                                <h3 className="text-slate-900 font-heading text-lg">{item.role}</h3>
+                                <p className="text-sky-700 font-semibold text-sm">{item.company}</p>
                             </div>
-                        );
-                    })}
-                </div>
+                            <p className="text-xs md:text-sm text-slate-500 rounded-full border border-slate-200 px-3 py-1 w-fit">
+                                {item.duration}
+                            </p>
+                        </div>
+
+                        <ul className="mt-4 space-y-2 text-slate-600 text-sm leading-relaxed list-disc list-inside">
+                            {item.details.map((point) => (
+                                <li key={point}>{point}</li>
+                            ))}
+                        </ul>
+                    </motion.article>
+                ))}
             </div>
         </section>
     );

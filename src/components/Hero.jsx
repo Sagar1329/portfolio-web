@@ -1,95 +1,87 @@
+import { motion } from "framer-motion";
 import { about, contact } from "../data";
-import { Github, Linkedin, Mail,Download } from "lucide-react";
+import { Download, Github, Linkedin, Mail, MapPin, Sparkles } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section className="pt-24 pb-20">
-            <div className="flex flex-col-reverse md:flex-row items-center gap-12">
+        <section id="about" className="section-shell overflow-hidden relative">
+            <div className="absolute -top-20 -right-20 h-52 w-52 rounded-full bg-sky-100 blur-3xl" />
 
-                {/* Left Content */}
-                <div className="flex-1 text-center md:text-left">
-                    <p className="text-sky-400 font-medium mb-3">
-                        Hello, I’m
-                    </p>
+            <div className="relative grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45 }}
+                >
+                    <div className="inline-flex items-center gap-2 rounded-full border border-sky-200 bg-sky-50 px-3 py-1 text-xs md:text-sm text-sky-700">
+                        <Sparkles size={14} />
+                        Open to full-time and freelance roles
+                    </div>
 
-                    <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
+                    <h1 className="mt-4 text-4xl md:text-6xl font-extrabold leading-tight text-slate-900">
                         {about.name}
                     </h1>
 
-                    <h2 className="text-2xl md:text-3xl font-semibold text-slate-300 mb-6">
-                        {about.role}
-                    </h2>
+                    <p className="mt-2 text-lg md:text-xl font-semibold text-sky-700">{about.role}</p>
 
-                    <p className="text-slate-300 max-w-xl mb-8">
-                        {about.description}
-                    </p>
+                    <p className="mt-4 text-slate-600 leading-relaxed max-w-2xl">{about.description}</p>
 
-                    {/* CTA Buttons */}
-                    <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                    <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-slate-600">
+                        <span className="inline-flex items-center gap-2">
+                            <MapPin size={14} className="text-sky-600" /> {about.location}
+                        </span>
+                        <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
+                            Experience: {about.experience}
+                        </span>
+                    </div>
+
+                    <div className="mt-6 flex flex-wrap gap-3">
+                        {about.highlights.map((item) => (
+                            <span key={item} className="rounded-full border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">
+                                {item}
+                            </span>
+                        ))}
+                    </div>
+
+                    <div className="mt-8 flex flex-wrap gap-3">
                         <a
                             href="#contact"
-                            className="px-6 py-3 bg-sky-500 text-white rounded-lg
-               hover:bg-sky-400 transition"
+                            className="px-5 py-2.5 rounded-full bg-slate-900 text-white font-semibold hover:bg-slate-800 transition"
                         >
-                            Contact Me
+                            Contact me
                         </a>
-
                         <a
                             href={`${import.meta.env.BASE_URL}SagarResume.pdf`}
                             target="_blank"
                             rel="noreferrer"
-                        
-                            className="flex items-center gap-2 px-6 py-3
-               border border-slate-500 text-slate-200 rounded-lg
-               hover:bg-slate-700 transition"
+                            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-slate-300 text-slate-700 hover:bg-slate-50 transition"
                         >
-                            <Download className="w-4 h-4" />
-                            Download Resume
+                            <Download size={16} />
+                            Resume
                         </a>
                     </div>
 
-                    {/* Social Icons */}
-                    <div className="flex justify-center md:justify-start gap-5 mt-8">
-                        <a
-                            href={contact.github}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-slate-400 hover:text-white transition"
-                        >
-                            <Github className="w-6 h-6" />
-                        </a>
-
-                        <a
-                            href={contact.linkedin}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="text-slate-400 hover:text-white transition"
-                        >
-                            <Linkedin className="w-6 h-6" />
-                        </a>
-
-                        <a
-                            href={`mailto:${contact.email}`}
-                            className="text-slate-400 hover:text-white transition"
-                        >
-                            <Mail className="w-6 h-6" />
-                        </a>
+                    <div className="mt-6 flex items-center gap-4">
+                        <a href={contact.github} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-sky-700 transition-colors"><Github size={21} /></a>
+                        <a href={contact.linkedin} target="_blank" rel="noreferrer" className="text-slate-500 hover:text-sky-700 transition-colors"><Linkedin size={21} /></a>
+                        <a href={`mailto:${contact.email}`} className="text-slate-500 hover:text-sky-700 transition-colors"><Mail size={21} /></a>
                     </div>
-                </div>
+                </motion.div>
 
-                {/* Right Avatar */}
-                <div className="w-50 h-50 md:w-56 md:h-56 rounded-full
-                bg-gradient-to-br from-sky-400 to-indigo-500 p-1">
-                    <div className="w-full h-full rounded-full bg-[#0f172a] overflow-hidden">
-                        <img
-                            src="images/avatar.png"
-                            alt="Sagar K"
-                            className="w-full h-full object-cover object-[50%_10%] scale-97"
-                        />
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.96 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.45, delay: 0.08 }}
+                    className="justify-self-center"
+                >
+                    <div className="w-56 h-56 md:w-64 md:h-64 rounded-[2rem] p-[2px] bg-gradient-to-br from-sky-200 via-blue-200 to-cyan-200">
+                        <div className="w-full h-full rounded-[2rem] overflow-hidden bg-slate-100">
+                            <img src="images/avatar.png" alt="Sagar K" className="w-full h-full object-cover object-[50%_10%]" />
+                        </div>
                     </div>
-                </div>
-
-
+                </motion.div>
             </div>
         </section>
     );

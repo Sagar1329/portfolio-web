@@ -6,15 +6,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#1f2937',
-        'secondary': '#10b981',
-        'accent': '#38bdf8',
-        'text-primary': '#f9fafb',
-        'text-secondary': '#9ca3af',
+        primary: '#0b1220',
+        surface: '#101a2e',
+        accent: '#2dd4bf',
+        highlight: '#38bdf8',
+        ink: '#e2e8f0',
       },
       fontFamily: {
-        'heading': ['Bebas Neue', 'sans-serif'],
-        'body': ['Montserrat', 'sans-serif'],
+        heading: ['Sora', 'sans-serif'],
+        body: ['Manrope', 'sans-serif'],
       },
     },
   },
