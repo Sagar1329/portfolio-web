@@ -1,10 +1,11 @@
 import { skills } from "../data";
 import { skillIcons } from "../constants/skillIcons";
-import { Code2, Database, Server, Settings, Sparkles } from "lucide-react";
+import { Code2, Database, Server, Settings, Sparkles, Smartphone } from "lucide-react";
 
 const groups = [
     { key: "frontend", title: "Frontend", icon: Code2 },
     { key: "backend", title: "Backend", icon: Server },
+    { key: "mobile", title: "Mobile", icon: Smartphone },
     { key: "databases", title: "Databases", icon: Database },
     { key: "devops_tools", title: "DevOps and Tools", icon: Settings },
     { key: "other", title: "Other", icon: Sparkles },

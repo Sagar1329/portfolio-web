@@ -23,12 +23,14 @@ import {
     Coins,
     LineChart,
     Compass,
+    Code,
 } from "lucide-react";
 
 export const skillIcons = {
     // Frontend
     "React.js": Atom,
     "Next.js": Compass,
+    JavaScript: Code,
     React: Atom,
     Vite: Waypoints,
     TypeScript: FileCode2,
@@ -67,5 +69,6 @@ export const skillIcons = {
     TradingView: LineChart,
     "Maps APIs": Waypoints,
     "Payment Gateway Integration": Coins,
-    "Media Rendering Pipelines": Layers,
+    "REST API Integration": Activity,
+    "JWT Authentication": KeyRound,
 };

@@ -1,19 +1,20 @@
 export const about = {
     name: "Sagar K",
-    role: "Full Stack Developer",
+    role: "Full Stack & Mobile Developer",
     location: "Bengaluru, India",
-    experience: "1.8 years",
+    experience: "2+",
     description:
-        "Full Stack Developer with 1.8 years of experience building production web and mobile applications using React, Next.js, Node.js, React Native, and Ruby on Rails. Delivered e-commerce systems, admin dashboards, and backend APIs used by real operations teams, including a public mobile app with 3,000+ downloads.",
-    highlights: ["3,000+ app downloads", "Production deployments", "End-to-end ownership"],
+        "Full Stack and Mobile Developer with 2+ years of professional experience building production-grade web and mobile applications using React.js, React Native, Next.js, Node.js, and Ruby on Rails. Experienced in developing scalable dashboards, e-commerce platforms, and mobile apps used by real users, including a public mobile app with 3,000+ downloads. Currently working as a React Native Developer at Fixezy.",
+    highlights: ["3,000+ app downloads", "2+ Years Experience", "Production deployments"],
 };
 
 export const skills = {
-    frontend: ["React.js", "Next.js", "TypeScript", "React Native", "Expo", "Tailwind CSS", "Bootstrap"],
-    backend: ["Node.js", "Express.js", "Ruby on Rails", "Flask", "REST APIs", "JWT Authentication"],
-    databases: ["MySQL", "PostgreSQL", "MongoDB"],
-    devops_tools: ["Git", "GitHub Actions", "Linux Server Deployment", "Jira", "Android Studio", "Postman"],
-    other: ["Payment Gateway Integration", "Maps APIs", "Media Rendering Pipelines"],
+    frontend: ["React.js", "Next.js", "TypeScript", "JavaScript", "React Native", "Expo", "Tailwind CSS", "Bootstrap"],
+    backend: ["Node.js", "Express.js", "Ruby on Rails", "Flask"],
+    mobile: ["React Native", "Flutter"],
+    databases: ["PostgreSQL", "MySQL", "MongoDB"],
+    devops_tools: ["Git", "GitHub Actions", "Linux Server Deployment", "Android Studio"],
+    other: ["REST API Integration", "JWT Authentication", "Payment Gateway Integration"],
 };
 
 export const projects = [
@@ -74,11 +75,23 @@ export const freelanceWork = [
 
 export const experience = [
     {
+        role: "React Native Developer (L2)",
+        company: "Fixezy",
+        duration: "Feb 2026 - Present",
+        details: [
+            "Working as a React Native developer contributing to mobile application development and feature implementation.",
+            "Collaborating with product and engineering teams to build scalable and maintainable mobile solutions.",
+            "Implementing UI components and integrating REST APIs for mobile application workflows.",
+            "Participating in code reviews, debugging, and performance optimization of React Native applications.",
+            "Following modern mobile development practices including modular architecture and reusable component design.",
+        ],
+    },
+    {
         role: "Full Stack Developer",
         company: "UniteGrid Infocomm",
         duration: "Mar 2025 - Nov 2025",
         details: [
-            "Built and deployed a React Native quick-commerce app with 3,000+ downloads.",
+            "Built and deployed a React Native quick-commerce app (Zetahub) with 3,000+ downloads.",
             "Developed an admin dashboard integrated with Ruby on Rails APIs for orders, inventory, and operations.",
             "Delivered retailer, warehouse, and delivery apps used by internal teams for daily logistics workflows.",
             "Integrated payment gateways, maps APIs, and media services for core business flows.",
@@ -87,13 +100,13 @@ export const experience = [
     },
     {
         role: "Associate Software Engineer",
-        company: "Intect Green Services",
+        company: "Intact Green Services",
         duration: "Mar 2024 - Feb 2025",
         details: [
             "Performed end-to-end testing of full-stack EdTech platforms for reliability and device compatibility.",
             "Designed and executed test scenarios for web and mobile applications.",
-            "Wrote API and automation scripts for migration validation and regression checks.",
-            "Worked with developers and product teams through Jira to improve release quality.",
+            "Conducted API testing and automation scripts for migration validation and regression checks.",
+            "Collaborated with developers and product teams using Jira to improve release quality.",
         ],
     },
 ];
