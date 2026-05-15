@@ -44,8 +44,6 @@ export const skillIcons = {
     "Node.js": Server,
     "Express.js": Braces,
     Flask: FlaskConical,
-    "REST APIs": Activity,
-    "JWT Authentication": KeyRound,
 
     // Mobile
     Flutter: Flame,
